@@ -11,7 +11,7 @@ jobs:
       shell: bash
       run: |
         curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.cargo}/bin
-    - name: run test
+    - name: Run test
       uses: actions-rs/cargo@v1
       with:
         command: nextest

@@ -4,6 +4,7 @@ fn main() {}
 mod tests {
     #[test]
     fn case_1() {
-       assert!(true);
+        println!("hello");
+        assert!(true);
     }
 }
