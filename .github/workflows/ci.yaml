@@ -1,0 +1,16 @@
+name: ci
+on: push
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Install nextest
+      shell: bash
+      run: |
+        curl -LsSf https://get.nexte.st/latest/linux | tar zxf - -C ${CARGO_HOME:-~/.cargo}/bin
+    - name: run test
+      use: actions-rs/cargo@v1
+      with:
+        command: nextest
+        args: run
